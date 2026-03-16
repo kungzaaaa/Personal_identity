@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ประวัติเพื่อนในห้อง</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f5f2;
+      --card-bg: #ffffff;
+      --accent: #7c9e87;
+      --text-primary: #2d2d2d;
+      --text-secondary: #888;
+      --border: #e8e4df;
+      --shadow: rgba(0,0,0,0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Sarabun', Tahoma, sans-serif;
+      background-color: var(--bg);
+      min-height: 100vh;
+      padding: 48px 32px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    header h1 {
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: 0.02em;
+    }
+
+    header .subtitle {
+      margin-top: 6px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    header .divider {
+      width: 40px;
+      height: 3px;
+      background: var(--accent);
+      margin: 16px auto 0;
+      border-radius: 2px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      padding: 24px 16px 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 12px var(--shadow);
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .avatar-wrap {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 14px;
+      background: #eef2ee;
+      overflow: hidden;
+      border: 3px solid var(--border);
+    }
+
+    .avatar-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .name {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 11.5px;
+      color: var(--accent);
+      background: #eef3ee;
+      border-radius: 20px;
+      padding: 3px 10px;
+      margin-bottom: 6px;
+      font-weight: 400;
+    }
+
+    .info {
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    .info span {
+      display: inline-block;
+      background: #f5f5f5;
+      border-radius: 20px;
+      padding: 3px 10px;
+    }
+
+    @media (max-width: 900px) {
+      .container { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 580px) {
+      .container { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* CSS ส่วนที่เพิ่มใหม่สำหรับ Link */
+    .more-info {
+      font-size: 12px;
+      color: #666;
+      padding-top: 10px;
+      width: 100%;
+    }
+    .more-info a {
+      color: var(--link-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .more-info a:hover {
+      text-decoration: underline;
+      color: #5a448a; /* สีม่วงเข้มขึ้นเมื่อ hover */
+    }
+
+    @media (max-width: 900px) { .container { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 580px) { .container { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ประวัติเพื่อนในห้อง</h1>
+    <p class="subtitle">สาขาคอมพิวเตอร์ธุรกิจ · 12 มีนาคม 2569</p>
+    <div class="divider"></div>
+  </header>
+
+  <div class="container">
+
+    <div class="card">
+      <div class="avatar-wrap"><img src="img/แม็ก.jpg" alt="แม็ก"></div>
+      <p class="name">แม็ก</p>
+      <p class="tag">คอมพิวเตอร์ธุรกิจ</p>
+      <p class="info"><span>🎮 เล่นเกม</span></p>
+      <p class="more-info">คลิกเพื่อดูข้อมูล : <a href="profile1.html">Click</a></p>
+    </div>
+
+    <div class="card">
+      <div class="avatar-wrap"><img src="img/ไผ่.jpg" alt="ไผ่"></div>
+      <p class="name">ไผ่</p>
+      <p class="tag">คอมพิวเตอร์ธุรกิจ</p>
+      <p class="info"><span>🎮 เล่นเกม</span></p>
+      <p class="more-info">คลิกเพื่อดูข้อมูล : <a href="profile2.html">Click</a></p>
+    </div>
+
+    <div class="card">
+      <div class="avatar-wrap"><img src="img/ดรีม.jpg" alt="ดรีม"></div>
+      <p class="name">ดรีม</p>
+      <p class="tag">คอมพิวเตอร์ธุรกิจ</p>
+      <p class="info"><span>🎬 ดูหนัง</span></p>
+      <p class="more-info">คลิกเพื่อดูข้อมูล : <a href="profile3.html">Click</a></p>
+    </div>
+
+    <div class="card">
+      <div class="avatar-wrap"><img src="img/น้ำ.jpg" alt="น้ำ"></div>
+      <p class="name">น้ำ</p>
+      <p class="tag">คอมพิวเตอร์ธุรกิจ</p>
+      <p class="info"><span>🎵 ฟังเพลง</span></p>
+      <p class="more-info">คลิกเพื่อดูข้อมูล : <a href="profile4.html">Click</a></p>
+    </div>
+
+    <div class="card">
+      <div class="avatar-wrap"><img src="img/อุ้ม.jpg" alt="อุ้ม"></div>
+      <p class="name">อุ้ม</p>
+      <p class="tag">คอมพิวเตอร์ธุรกิจ</p>
+      <p class="info"><span>🎵 ฟังเพลง</span></p>
+      <p class="more-info">คลิกเพื่อดูข้อมูล : <a href="profile5.html">Click</a></p>
+    </div>
+
+    <div class="card">
+      <div class="avatar-wrap"><img src="img/อาร์.jpg" alt="อาร์"></div>
+      <p class="name">อาร์</p>
+      <p class="tag">คอมพิวเตอร์ธุรกิจ</p>
+      <p class="info"><span>🎮 เล่นเกม</span></p>
+      <p class="more-info">คลิกเพื่อดูข้อมูล : <a href="profile6.html">Click</a></p>
+    </div>
+
+    <div class="card">
+      <div class="avatar-wrap"><img src="img/เกี๊ยว.jpg" alt="เกี๊ยว"></div>
+      <p class="name">เกี๊ยว</p>
+      <p class="tag">คอมพิวเตอร์ธุรกิจ</p>
+      <p class="info"><span>🎵 ฟังเพลง</span></p>
+      <p class="more-info">คลิกเพื่อดูข้อมูล : <a href="profile7.html">Click</a></p>
+    </div>
+
+    <div class="card">
+      <div class="avatar-wrap"><img src="img/พรีม.jpg" alt="พรีม"></div>
+      <p class="name">พรีม</p>
+      <p class="tag">คอมพิวเตอร์ธุรกิจ</p>
+      <p class="info"><span>🚗 ปรับแต่งรถ</span></p>
+      <p class="more-info">คลิกเพื่อดูข้อมูล : <a href="profile8.html">Click</a></p>
+    </div>
+
+    <div class="card">
+      <div class="avatar-wrap"><img src="img/มิก.jpg" alt="มิก"></div>
+      <p class="name">มิก</p>
+      <p class="tag">คอมพิวเตอร์ธุรกิจ</p>
+      <p class="info"><span>💻 ฝึกเขียนโปรแกรม</span></p>
+      <p class="more-info">คลิกเพื่อดูข้อมูล : <a href="profile9.html">Click</a></p>
+    </div>
+
+    <div class="card">
+      <div class="avatar-wrap"><img src="img/แบท.jpg" alt="แบทแมน"></div>
+      <p class="name">แบทแมน</p>
+      <p class="tag">คอมพิวเตอร์ธุรกิจ</p>
+      <p class="info"><span>🎮 เล่นเกม</span></p>
+      <p class="more-info">คลิกเพื่อดูข้อมูล : <a href="profile10.html">Click</a></p>
+    </div>
+
+  </div>
+
+</body>
+</html>

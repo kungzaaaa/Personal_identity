@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ประวัติ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* กำหนดตัวแปรสีหลักให้สอดคล้องกับหน้าเว็บเดิม */
+    :root {
+      --bg: #f7f5f2;
+      --card-bg: #ffffff;
+      --text-primary: #2d2d2d;
+      --text-highlight: #003366; /* สีน้ำเงินเข้มสำหรับหัวข้อ */
+      --border: #e8e4df;
+      --shadow: rgba(0,0,0,0.08);
+      --accent: #7c9e87;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Sarabun', Tahoma, sans-serif;
+      background-color: var(--bg);
+      display: flex;
+      justify-content: center; /* จัดกึ่งกลางแนวนอน */
+      align-items: center; /* จัดกึ่งกลางแนวตั้ง */
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    /* กล่องหลักสำหรับใส่เนื้อหาทั้งหมด */
+    .profile-container {
+      background: var(--card-bg);
+      width: 100%;
+      max-width: 600px;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    /* --- ส่วนที่เพิ่มใหม่: CSS สำหรับรูปโปรไฟล์ --- */
+    .profile-image {
+      width: 150px; /* ขนาดความกว้าง */
+      height: 150px; /* ขนาดความสูง */
+      margin: 0 auto 20px auto; /* จัดกึ่งกลางและเว้นระยะด้านล่าง 20px */
+      border-radius: 50%; /* ทำให้เป็นวงกลม */
+      border: 4px solid #fff; /* ขอบสีขาวด้านใน */
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1), 0 0 0 2px var(--border); /* สร้างเงาและขอบสีเทาด้านนอกสุด */
+      overflow: hidden; /* ซ่อนส่วนที่ล้นวงกลมออกมา */
+      background-color: #eef2ee; /* สีพื้นหลังเผื่อรูปยังไม่โหลด */
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* ทำให้รูปเต็มกรอบโดยไม่เสียสัดส่วน (Best Practice) */
+    }
+    /* ------------------------------------- */
+
+    /* ส่วนหัวข้อ (ชื่อ) */
+    .profile-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text-highlight);
+      text-align: center;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid var(--border); /* เส้นคั่นใต้ชื่อ */
+    }
+
+    /* สไตล์สำหรับรายการประวัติ (ใช้ CSS Counter เพื่อให้เลขชิดซ้าย) */
+    .profile-list {
+      list-style-type: none; /* ปิดการแสดงผลตัวเลขแบบเดิม */
+      padding-left: 0; /* ล้างระยะห่างด้านซ้ายเดิมออก */
+      color: var(--text-primary);
+      counter-reset: profile-counter; /* สร้างตัวนับเลข (Counter) ของเราเอง */
+    }
+
+    .profile-list li {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 10px;
+      position: relative; /* กำหนดตำแหน่งอ้างอิงสำหรับตัวเลข */
+      padding-left: 35px; /* เว้นที่ว่างด้านซ้ายของบรรทัดไว้ 35px ให้ตัวเลขแสดง */
+    }
+
+    /* คำสั่ง ::before จะแทรกตัวเลขเข้าไปข้างหน้า <li> ทุกตัว */
+    .profile-list li::before {
+      content: counter(profile-counter) ". "; /* ให้แสดงตัวเลขตามด้วยจุดและช่องว่าง */
+      counter-increment: profile-counter; /* ให้ตัวเลขบวกเพิ่มทีละ 1 */
+      position: absolute; /* ทำให้ตัวเลขลอยอิสระจากข้อความ */
+      left: 0; /* บังคับให้ตัวเลขเกาะติดขอบซ้ายสุดเสมอ (ทำให้เลข 1 และ 10 ขนานกัน) */
+      text-align: left; /* จัดแนวตัวเลขให้ชิดซ้าย */
+    }
+
+    /* ปรับขนาดให้เหมาะสมเมื่อดูบนมือถือ */
+    @media (max-width: 480px) {
+      .profile-container { padding: 24px; }
+      .profile-image { width: 120px; height: 120px; } /* ลดขนาดรูปลงบนมือถือ */
+      .profile-title { font-size: 24px; }
+      .profile-list li { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-container">
+    
+    <div class="profile-image">
+      <img src="img/แม็ก.jpg" alt="รูปโปรไฟล์ของ นายสิทธิชัย สุทธิใจ">
+    </div>
+
+    <h1 class="profile-title">ประวัติ นายสิทธิชัย</h1>
+    
+    <ol class="profile-list">
+      <li>ชื่อ : นายสิทธิชัย สุทธิใจ</li>
+      <li>ชื่อเล่น : แม็ก</li>
+      <li>อายุ : 19 ปี</li>
+      <li>สาขาวิชา : เทคโนโลยีธุรกิจดิจิทัล</li>
+      <li>ระดับชั้น : ปวส.1</li>
+      <li>โรงเรียน : วิทยาลัยเทคนิคมวกเหล็ก</li>
+      <li>งานอดิเรก : เล่นเกม</li>
+      <li>ความสามารถพิเศษ : การเขียนโปรแกรม</li>
+      <li>วิชาที่ชอบ : การสร้างเว็บไซต์</li>
+      <li>อาชีพในฝัน : โปรแกรมเมอร์</li>
+    </ol>
+  </div>
+
+</body>
+</html>
